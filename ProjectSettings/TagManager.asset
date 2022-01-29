@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - booster_left
-  - booster_right
-  - propulser
+  - Propulser
+  - BoosterLeft
+  - BoosterRight
+  - Friendly
   layers:
   - Default
   - TransparentFX

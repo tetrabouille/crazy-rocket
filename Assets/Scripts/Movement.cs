@@ -9,25 +9,27 @@ public class Movement : MonoBehaviour
     private Boost[] rightBoosters;
     private Boost[] leftBoosters;
     private Boost propulser;
+    private CoreController coreController;
     private AudioSource audioSource;
+    private GameController gameController;
 
-    // Start is called before the first frame update
     void Start()
     {
         List<Boost> boosters = gameObject.GetComponentsInChildren<Boost>().ToList();
         audioSource = gameObject.GetComponent<AudioSource>();
+        gameController = GameObject.FindObjectOfType<GameController>();
+        coreController = gameObject.GetComponentInChildren<CoreController>();
 
-        propulser = boosters.Single(x => x.tag == "propulser");
-        leftBoosters = boosters.Where(x => x.tag == "booster_left").ToArray();
-        rightBoosters = boosters.Where(x => x.tag == "booster_right").ToArray();
+        propulser = boosters.Single(x => x.tag == "Propulser");
+        leftBoosters = boosters.Where(x => x.tag == "BoosterLeft").ToArray();
+        rightBoosters = boosters.Where(x => x.tag == "BoosterRight").ToArray();
 
         Physics.gravity = Vector3.down * gravityForce;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Physics.gravity = Vector3.down * gravityForce;
+        if (gameController.gameOver) return;
 
         ProcessBoost();
         ProcessRotation();
@@ -50,7 +52,8 @@ public class Movement : MonoBehaviour
     void ProcessRotation()
     {
         Boost[] boosters = null;
-        bool kick = Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.D);
+
+        if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.D)) coreController.ResetRotation();
 
         if (Input.GetKey(KeyCode.Q)) boosters = leftBoosters;
         else if (Input.GetKey(KeyCode.D)) boosters = rightBoosters;
@@ -58,7 +61,7 @@ public class Movement : MonoBehaviour
         if (boosters == null) return;
         foreach (Boost booster in boosters)
         {
-            if (kick) booster.Kick();
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.D)) booster.Kick();
             else booster.Fire();
         }
     }

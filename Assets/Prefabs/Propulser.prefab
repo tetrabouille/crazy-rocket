@@ -175,9 +175,10 @@ GameObject:
   - component: {fileID: 2830737265484417918}
   - component: {fileID: 8320268973312312459}
   - component: {fileID: 1315541831256198746}
+  - component: {fileID: 3407478869961157461}
   m_Layer: 0
   m_Name: Propulser
-  m_TagString: propulser
+  m_TagString: Propulser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +222,7 @@ Rigidbody:
   m_GameObject: {fileID: 3532391498399038468}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 0.25
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -258,6 +259,18 @@ MonoBehaviour:
   force: 900
   kick: 1
   direction: {x: 0, y: 1, z: 0}
+--- !u!114 &3407478869961157461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532391498399038468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d467391d49f0476680c9f5cf68bb6e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4480523776134342865
 GameObject:
   m_ObjectHideFlags: 0
