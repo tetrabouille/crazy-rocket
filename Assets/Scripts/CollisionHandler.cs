@@ -9,8 +9,9 @@ public class CollisionHandler : MonoBehaviour
     private void Start()
     {
         lifeController = gameObject.GetComponent<LifeController>();
+        audioSource = gameObject.GetComponent<AudioSource>();
+
         gameController = GameObject.FindObjectOfType<GameController>();
-        audioSource = gameController.GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -29,8 +30,8 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case "Finish":
                 if (gameController.gameOver) return;
-                audioSource.Stop();
                 gameController.InvokeFinish();
+                audioSource.Stop();
                 break;
             default:
                 lifeController.Hit();

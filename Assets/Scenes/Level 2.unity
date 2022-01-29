@@ -278,34 +278,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ad7eefda725f4423aad2215073a109fe, type: 3}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408528856562937360, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
-      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82eacdebe2a34b368729726f82c1699, type: 3}
 --- !u!4 &1617293030 stripped
@@ -323,22 +295,6 @@ PrefabInstance:
     - target: {fileID: 1608158802001503579, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608158802001503580, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608158802001503580, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608158802001503580, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608158802001503580, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
-      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1608158802001503582, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
       propertyPath: m_RootOrder
@@ -384,10 +340,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1608158802001503583, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
-      propertyPath: successAC
-      value: 
-      objectReference: {fileID: 8300000, guid: 2a9d24cc4e62e450eb17ae6af702aa5c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf3fac81b7b64f1e85e1668a2d1cce6, type: 3}
 --- !u!1001 &6281246309228010510
