@@ -11,14 +11,12 @@ public class Boost : MonoBehaviour
     private Rigidbody rb;
     private Rigidbody parentRb;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         parentRb = gameObject.GetComponentInParent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -9,12 +9,13 @@ public class Movement : MonoBehaviour
     private Boost[] rightBoosters;
     private Boost[] leftBoosters;
     private Boost propulser;
-    private string rotation = null;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        List<Boost> boosters = GameObject.FindObjectsOfType<Boost>().ToList();
+        List<Boost> boosters = gameObject.GetComponentsInChildren<Boost>().ToList();
+        audioSource = gameObject.GetComponent<AudioSource>();
 
         propulser = boosters.Single(x => x.tag == "propulser");
         leftBoosters = boosters.Where(x => x.tag == "booster_left").ToArray();
@@ -34,7 +35,16 @@ public class Movement : MonoBehaviour
 
     void ProcessBoost()
     {
-        if (Input.GetKey(KeyCode.Space)) propulser.Fire();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            propulser.Fire();
+            if (!audioSource.isPlaying) audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
+
     }
 
     void ProcessRotation()
