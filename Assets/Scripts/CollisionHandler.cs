@@ -26,6 +26,8 @@ public class CollisionHandler : MonoBehaviour
 
     public void HandleCollision(Collision other)
     {
+        if (gameController.disableCollisions || gameController.gameOver) return;
+
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -34,7 +36,6 @@ public class CollisionHandler : MonoBehaviour
             case "BoosterLeft":
                 break;
             case "Finish":
-                if (gameController.gameOver) return;
                 gameController.InvokeFinish();
                 lifeController.StopAllBoosters();
                 successParticle.Play();
