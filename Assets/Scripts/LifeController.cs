@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LifeController : MonoBehaviour
@@ -11,13 +10,18 @@ public class LifeController : MonoBehaviour
     private Boost[] boosters;
     private GameController gameController;
     private AudioSource audioSource;
+    private ParticleSystem explostionParticle;
 
     void Start()
     {
-        gameController = GameObject.FindObjectOfType<GameController>();
         audioSource = gameObject.GetComponent<AudioSource>();
         joints = gameObject.GetComponentsInChildren<FixedJoint>();
         boosters = gameObject.GetComponentsInChildren<Boost>();
+        explostionParticle = gameObject
+            .GetComponentsInChildren<ParticleSystem>()
+            .Single(x => x.tag == "Explosion");
+
+        gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     void Update()
@@ -32,7 +36,8 @@ public class LifeController : MonoBehaviour
         gameController.InvokeDeath();
         StopAllBoosters();
         audioSource.Stop();
-        audioSource.PlayOneShot(explosionAC, 0.7f);
+        audioSource.PlayOneShot(explosionAC, 0.6f);
+        explostionParticle.Play();
     }
 
     public void Hit(int power = 1)

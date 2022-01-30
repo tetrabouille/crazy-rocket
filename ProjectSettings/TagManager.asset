@@ -8,6 +8,8 @@ TagManager:
   - BoosterLeft
   - BoosterRight
   - Friendly
+  - Explosion
+  - Success
   layers:
   - Default
   - TransparentFX

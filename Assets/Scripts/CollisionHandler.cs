@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
@@ -5,11 +6,15 @@ public class CollisionHandler : MonoBehaviour
     private GameController gameController;
     private LifeController lifeController;
     private AudioSource audioSource;
+    private ParticleSystem successParticle;
 
-    private void Start()
+    void Start()
     {
         lifeController = gameObject.GetComponent<LifeController>();
         audioSource = gameObject.GetComponent<AudioSource>();
+        successParticle = gameObject
+            .GetComponentsInChildren<ParticleSystem>()
+            .Single(x => x.tag == "Success");
 
         gameController = GameObject.FindObjectOfType<GameController>();
     }
@@ -32,6 +37,7 @@ public class CollisionHandler : MonoBehaviour
                 if (gameController.gameOver) return;
                 gameController.InvokeFinish();
                 lifeController.StopAllBoosters();
+                successParticle.Play();
                 audioSource.Stop();
                 break;
             default:
