@@ -31,6 +31,7 @@ public class CollisionHandler : MonoBehaviour
             case "Finish":
                 if (gameController.gameOver) return;
                 gameController.InvokeFinish();
+                lifeController.StopAllBoosters();
                 audioSource.Stop();
                 break;
             default:

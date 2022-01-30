@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: direction.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4935568021537567205, guid: 65a8d7167499b44a78a8704d8a4043b0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6526904794459211073, guid: 65a8d7167499b44a78a8704d8a4043b0, type: 3}
       propertyPath: m_ConnectedBody
       value: 
@@ -828,6 +832,10 @@ PrefabInstance:
     - target: {fileID: 3742589683135802112, guid: 65a8d7167499b44a78a8704d8a4043b0, type: 3}
       propertyPath: direction.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935568021537567205, guid: 65a8d7167499b44a78a8704d8a4043b0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6526904794459211073, guid: 65a8d7167499b44a78a8704d8a4043b0, type: 3}
       propertyPath: m_ConnectedBody
